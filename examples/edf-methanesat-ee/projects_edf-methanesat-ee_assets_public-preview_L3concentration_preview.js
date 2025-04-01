@@ -1,9 +1,8 @@
 // Request access to this data by filling out the form at: https://forms.gle/jqw4Mvr63dsV1fUF8
-var methaneSATArea = ee.ImageCollection("projects/edf-methanesat-ee/assets/public-preview/L3concentration")
-  .filterDate('2024-10-20', '2024-10-21');
+var methaneSATArea = ee.Image("projects/edf-methanesat-ee/assets/public-preview/L3concentration/MSAT_L3_45m_COG_GEE_c02EC05F0_p680_v01010000_20241020T202216Z_202241Z")
 
 // Visualization
-var datasetVis = methaneSATArea.mosaic().visualize({
+var datasetVis = methaneSATArea.visualize({
   bands: ['XCH4'],
   min: 1870,
   max: 2030,

@@ -1,6 +1,7 @@
 // Request access to this data by filling out the form at: https://forms.gle/jqw4Mvr63dsV1fUF8
 var methaneSATArea = ee.ImageCollection("projects/edf-methanesat-ee/assets/public-preview/L4area")
   .filterDate('2024-12-25', '2024-12-26');
+var methaneSATArea = ee.Image("projects/edf-methanesat-ee/assets/public-preview/L4area/L4_85_052E0550_cannon-20250225_2024-12-25_5km")
 
 // Visualization
 var colorRange = [
@@ -8,7 +9,7 @@ var colorRange = [
   "#EA8D2C", "#EC8129", "#F16823", "#D85627", "#BF442C", "#983623", "#70281A"
 ];
 
-var datasetVis = methaneSATArea.mosaic().visualize({
+var datasetVis = methaneSATArea.visualize({
   min: 0,
   max: 625,
   palette: colorRange,
